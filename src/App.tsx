@@ -1,13 +1,17 @@
-import { Hero } from './components/landing/Hero'
-import { Features } from './components/landing/Features'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Landing } from './pages/Landing'
+import { Login } from './pages/Login'
+import { Register } from './pages/Register'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-black text-white">
-      <Hero />
-      <Features />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
